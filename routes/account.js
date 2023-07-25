@@ -1,11 +1,8 @@
-import express from 'express';
+import { Router } from 'express';
 import { USER_BBDD } from '../src/bbdd.js';
 
-const router = express.Router();
-router.use((req, res, next) => {
-    console.log('Time: ', Date.now());
-    next();
-});
+const router = Router();
+
 //crud de cuentas
 router.get('/:user_id', (req, res) => {
     const { id } = req.params;
