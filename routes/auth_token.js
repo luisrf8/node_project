@@ -28,6 +28,7 @@ authTokenRouter.post("/login", async (req, res) => {
     return res.sendStatus(401);
   }
 });
+// https://www.youtube.com/watch?v=7slR56l2QSM&list=PL3aEngjGbYhnrRfZKMxzn79qdgPxL7OWM&index=11
 authTokenRouter.get('/profile', async (req, res) => {
     const {authorization} = req.headers
     if(!authorization) res.sendStatus(401)
