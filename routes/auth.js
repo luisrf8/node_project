@@ -15,7 +15,6 @@ authRouter.post("/autenticado", (req, res) => {
     return res.sendStatus(400);
   }
   try {
-    console.log(email, password);
     const user = authByEmailPwd(email, password);
     return res.send(`usuario ${user.name} autenticado`);
   } catch (err) {

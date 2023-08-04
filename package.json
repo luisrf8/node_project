@@ -20,10 +20,12 @@
   "homepage": "https://github.com/luisrf8/node_project#readme",
   "description": "",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "live-server": "^1.2.2",
+    "nanoid": "^4.0.2",
     "nodemon": "^3.0.1"
   }
 }
