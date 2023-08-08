@@ -6,11 +6,12 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import authSessionRouter from '../routes/auth_session.js';
 import authTokenRouter from '../routes/auth_token.js';
+import mongoose from 'mongoose';
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
-
+const MONGODB_URL = process.env.MONGODB_URL 
 const app = express();
 
 app.use(express.json());
@@ -25,5 +26,14 @@ app.post("/account/:idcuenta", (req, res) => {
     res.send()
 });
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
+const bootstrap = async () => {
+    
+    await mongoose.connect(MONGODB_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
+    
+}
 
+bootstrap();
